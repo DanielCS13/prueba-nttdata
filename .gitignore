@@ -11,3 +11,5 @@ nttdata-frontend/node_modules/
 .vscode/
 .idea/
 *.sw?
+nttdata-backend/package-lock.json
+nttdata-frontend/package-lock.json
