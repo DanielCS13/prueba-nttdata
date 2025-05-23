@@ -25,7 +25,7 @@ GET http://localhost:3000/users?cantidad=10
 
 ### Instalación y ejecución
 
-```bash
+```
 cd nttdata-backend
 npm install
 npm run dev
@@ -72,7 +72,7 @@ Página principal que incluye el `Layout` y renderiza el componente `Generator` 
 
 ### Instalación y ejecución
 
-```bash
+```
 cd nttdata-frontend
 npm install
 npm run dev
@@ -82,5 +82,6 @@ npm run dev
 
 Crea un archivo `.env` en `nttdata-frontend/` con:
 
-```ini
+```
 VITE_API_BASE=http://localhost:3000
+```
