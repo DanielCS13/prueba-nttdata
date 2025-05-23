@@ -35,8 +35,9 @@ npm run dev
 
 Crea un archivo `.env` dentro de `nttdata-backend/src/env/` con el siguiente contenido:
 
-```ini
+```
 API_BASE=[https://randomuser.me](https://randomuser.me)
+```
 
 ## ⚛️ Frontend (`nttdata-frontend/`)
 
