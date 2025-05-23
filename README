@@ -13,14 +13,14 @@ El backend está desarrollado con **Node.js** utilizando **Express**. Actúa com
 
 ### Funcionalidades principales
 
-- Endpoint `/users` que acepta un parámetro de consulta `cantidad`.
+- Endpoint `/users` que acepta un parámetro de consulta `count`.
 - Devuelve la cantidad de usuarios solicitada (por defecto 10).
-- Valida que `cantidad` sea un número entre 1 y 100.
+- Valida que `count` sea un número entre 1 y 100.
 - Manejo de errores con mensajes claros si se envían datos inválidos.
 
 ### Ejemplo de uso
 
-GET http://localhost:3000/users?cantidad=10
+GET http://localhost:3000/users?count=10
 
 
 ### Instalación y ejecución
@@ -33,10 +33,11 @@ npm run dev
 
 **Variables de entorno**
 
-Crea un archivo `.env` dentro de `nttdata-backend/src/env/` con el siguiente contenido:
+Crea una copia del archivo `.env.local` y renómbrala a `.env` en `nttdata-backend/` con el siguiente contenido:
 
 ```
-API_BASE=[https://randomuser.me](https://randomuser.me)
+PORT=3000
+API_URL=https://randomuser.me/api/
 ```
 
 ## ⚛️ Frontend (`nttdata-frontend/`)
@@ -80,8 +81,8 @@ npm run dev
 
 **Variables de entorno**
 
-Crea un archivo `.env` en `nttdata-frontend/` con:
+Crea una copia del archivo `.env.local` y renómbrala a `.env` en `nttdata-frontend/` con el siguiente contenido:
 
 ```
-VITE_API_BASE=http://localhost:3000
+PUBLIC_API_URL=http://localhost:3000/api/users
 ```
