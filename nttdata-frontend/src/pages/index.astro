@@ -1,0 +1,14 @@
+---
+import { Generator } from "../componentes/Generator";
+import Layout from "../layouts/Layout.astro";
+
+---
+
+<Layout>
+  <div class="flex flex-col items-center justify-center pt-8 ">
+    <h1 class="text-4xl font-bold mb-4">Generador de Tarjetas</h1>
+    <p class="text-lg mb-4">Genera tarjetas de presentación personalizadas.</p>
+	<Generator client:load />
+  </div>
+</Layout>
+

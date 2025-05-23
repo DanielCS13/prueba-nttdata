@@ -1,0 +1,13 @@
+# Environment variables
+nttdata-frontend/.env
+nttdata-backend/.env
+
+
+# node_modules (para ambos)
+nttdata-backend/node_modules/
+nttdata-frontend/node_modules/
+
+# IDEs / editors
+.vscode/
+.idea/
+*.sw?

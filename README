@@ -1,0 +1,83 @@
+# Proyecto NTT Data - Generador de Tarjetas
+
+Este proyecto consiste en una aplicación web que genera tarjetas de presentación personalizadas usando datos aleatorios de usuarios. Está dividido en dos partes:
+
+- **Backend**: API construida con Node.js y Express.
+- **Frontend**: Aplicación web construida con Astro y React.
+
+---
+
+## 🛠️ Backend (`nttdata-backend/`)
+
+El backend está desarrollado con **Node.js** utilizando **Express**. Actúa como intermediario entre el frontend y la API pública [randomuser.me](https://randomuser.me), lo que permite controlar el número de usuarios solicitados y validar los datos recibidos.
+
+### Funcionalidades principales
+
+- Endpoint `/users` que acepta un parámetro de consulta `cantidad`.
+- Devuelve la cantidad de usuarios solicitada (por defecto 10).
+- Valida que `cantidad` sea un número entre 1 y 100.
+- Manejo de errores con mensajes claros si se envían datos inválidos.
+
+### Ejemplo de uso
+
+GET http://localhost:3000/users?cantidad=10
+
+### Instalación y ejecución
+
+```bash
+cd nttdata-backend
+npm install
+npm run dev
+
+Variables de entorno
+Crea un archivo .env dentro de nttdata-backend/src/env/ con el siguiente contenido:
+API_BASE=https://randomuser.me
+
+Frontend (nttdata-frontend/)
+El frontend está construido con Astro y utiliza React para los componentes interactivos. Usa Tailwind CSS para los estilos visuales.
+
+Estructura del frontend
+Astro maneja la estructura general, rutas, y layout.
+
+React se usa para el componente generador y para renderizar las tarjetas.
+
+Componentes
+Generator.jsx (React)
+Input para seleccionar cuántos usuarios mostrar.
+
+Llama a la API del backend para obtener los datos.
+
+Renderiza un grupo de tarjetas según la cantidad seleccionada.
+
+Card.jsx (React)
+Componente individual que muestra:
+
+Foto del usuario
+
+Nombre completo
+
+Género
+
+Ubicación (ciudad, estado, país)
+
+Correo electrónico
+
+Fecha de nacimiento (formateada)
+
+index.astro (Astro)
+Página principal que incluye el Layout y renderiza el componente Generator con client:load para que se hidrate con React en el cliente.
+
+Instalación y ejecución
+bash
+Copiar
+Editar
+cd nttdata-frontend
+npm install
+npm run dev
+Variables de entorno
+Crea un archivo .env en nttdata-frontend/ con:
+
+ini
+Copiar
+Editar
+VITE_API_BASE=http://localhost:3000
